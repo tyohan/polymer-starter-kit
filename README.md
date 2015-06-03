@@ -5,11 +5,11 @@
 
 ### Included out of the box:
 
-* [Polymer](http://polymer-project.org), Paper and Iron elements
+* [Polymer](http://polymer-project.org), [Paper](https://elements.polymer-project.org/browse?package=paper-elements) and [Iron](https://elements.polymer-project.org/browse?package=iron-elements) elements
 * [Material Design](http://www.google.com/design/spec/material-design/introduction.html) layout 
 * Routing with [Page.js](https://visionmedia.github.io/page.js/)
 * Unit testing with Web Component Tester
-* Offline-first setup through Service Worker elements
+* Offline-first setup through [Platinum](https://elements.polymer-project.org/browse?package=platinum-elements) Service Worker elements
 * End-to-end Build Tooling (including [Vulcanize](https://github.com/Polymer/vulcanize))
 
 ## Getting Started
@@ -24,6 +24,8 @@ To take advantage of Polymer Starter Kit you need to:
 ## Getting the code
 
 [Download](https://github.com/polymerelements/polymer-starter-kit/releases/latest) and extract Polymer Starter Kit to where you want to work.
+
+*For absolute beginners, we also offer a very simple non-tooling version available from [Releases](https://github.com/polymerelements/polymer-starter-kit/releases/latest) page*
 
 ### Install dependencies
 
@@ -64,9 +66,13 @@ Build and optimize the current project, ready for deployment. This includes lint
 
 Polymer 1.0 introduces a shim for CSS custom properties. We take advantage of this in `app/elements/app-theme.html` to provide theming for your application. You can also find our presets for Material Design breakpoints in this file.
 
+[Read more](https://www.polymer-project.org/1.0/docs/devguide/styling.html) about CSS custom properties.
+
 ## Unit Testing
 
 Web apps built with Polymer Starter Kit come configured with support for [Web Component Tester](https://github.com/Polymer/web-component-tester) - Polymer's preferred tool for authoring and running unit tests. This makes testing your element based applications a pleasant experience.
+
+[Read more](https://github.com/Polymer/web-component-tester#html-suites) about using Web Component tester.
 
 ## Dependency Management
 
@@ -129,6 +135,62 @@ You will also want to navigate to `chrome://serviceworker-internals` and unregis
 ## Yeoman support
 
 [generator-polymer](https://github.com/yeoman/generator-polymer/releases) now includes support for Polymer Starter Kit out of the box.
+
+## Frequently Asked Questions
+
+> Where do I customise my application theme?
+
+Theming can be achieved using [CSS Custom properties](https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details) 
+and via [app/elements/app-theme.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/app-theme.html). 
+You can also use `app/styles/` for pure CSS stylesheets (e.g for global styles), however note that Custom properties will not work there under the shim.
+
+If you wish to split your CSS Custom property based stylesheets across multiple files, consider using [Custom CSS mixins](https://www.polymer-project.org/1.0/docs/devguide/styling.html#custom-css-mixins) and
+HTML imports.
+
+A [Polycast](https://www.youtube.com/watch?v=omASiF85JzI) is also available that walks through theming using Polymer 1.0.
+
+> Where do I configure routes in my application?
+
+This can be done via [app/elements/routing.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/routing.html). We use Page.js for routing and new routes
+can be defined in this import. We then toggle which `<iron-pages>` page to display based on the [selected](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/index.html#L105) route.
+
+> Why are we using Page.js rather than a declarative router like `<more-routing>`?
+
+`<more-routing>` (in our opinion) is good, but lacks imperative hooks for getting full control
+over the routing in your application. This is one place where a pure JS router shines. We may 
+at some point switch back to a declarative router when our hook requirements are tackled. That
+said, it should be trivial to switch to `<more-routing>` or another declarative router in your
+own local setup.
+
+> Where can I find the application layouts from your Google I/O 2015 talk?
+
+App layouts live in a separate repository called [app-layout-templates](https://github.com/PolymerElements/app-layout-templates).
+You can select a template and copy over the relevant parts you would like to reuse to Polymer Starter Kit. 
+
+You will probably need to change paths to where your Iron and Paper dependencies can be found to get everything working.
+This can be done by adding them to the [elements.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/elements.html) import.
+
+> Something has failed during installation. How do I fix this?
+
+Our most commonly reported issue is around system permissions for installing Node dependencies. 
+We recommend following the [fixing npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions)
+guide to address any messages around administrator permissions being required. If you use `sudo`
+to work around these issues, this guide may also be useful for avoiding that.
+
+If the issue is to do with a failure somewhere else, you might find that due to a network issue
+a dependency failed to correctly install. We recommend running `npm cache clean` followed by 
+`npm install` to see if this corrects the problem. If not, please check the [issue tracker](https://github.com/PolymerElements/polymer-starter-kit/issues) in case
+there is a workaround or fix already posted.
+
+> I'm finding the installation/tooling here overwhelming. What should I do?
+
+Don't worry! We've got your covered. Polymer Starter Kit tries to offer everything you need to build 
+and optimize your apps for production, which is why we include the tooling we do. We realise however
+that our tooling setup may not be for everyone.
+
+If you find that you just want the simplest setup possible, we recommend using Polymer Starter Kit light, 
+which is available from the [Releases](https://github.com/PolymerElements/polymer-starter-kit/releases) page.
+This takes next to no time to setup.
 
 ## Contributing
 
