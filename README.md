@@ -140,8 +140,7 @@ You will also want to navigate to `chrome://serviceworker-internals` and unregis
 
 > Where do I customise my application theme?
 
-Theming can be achieved using [CSS Custom properties](https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details) 
-and via [app/elements/app-theme.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/app-theme.html). 
+Theming can be achieved using [CSS Custom properties](https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details) via [app/elements/app-theme.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/app-theme.html). 
 You can also use `app/styles/` for pure CSS stylesheets (e.g for global styles), however note that Custom properties will not work there under the shim.
 
 If you wish to split your CSS Custom property based stylesheets across multiple files, consider using [Custom CSS mixins](https://www.polymer-project.org/1.0/docs/devguide/styling.html#custom-css-mixins) and
@@ -181,6 +180,24 @@ If the issue is to do with a failure somewhere else, you might find that due to 
 a dependency failed to correctly install. We recommend running `npm cache clean` followed by 
 `npm install` to see if this corrects the problem. If not, please check the [issue tracker](https://github.com/PolymerElements/polymer-starter-kit/issues) in case
 there is a workaround or fix already posted.
+
+> How do I add new JavaScript files to Starter Kit so they're picked up by the build process?
+
+At the bottom of `app/index.html`, you will find a build block that can be used to include additional
+scripts for your app. Build blocks are just normal script tags that are wrapped in a HTML 
+comment that indicates where to concatenate and minify their final contents to.
+
+Below, we've added in `script2.js` and `script3.js` to this block. The line 
+`<!-- build:js scripts/app.js -->` specifies that these scripts will be squashed into `scripts/app.js`
+during a build.
+
+```html
+  <!-- build:js scripts/app.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/script2.js"></script>
+    <script src="scripts/script3.js"></script>
+  <!-- endbuild-->
+```
 
 > I'm finding the installation/tooling here overwhelming. What should I do?
 
