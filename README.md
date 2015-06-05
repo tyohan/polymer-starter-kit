@@ -185,7 +185,7 @@ A [Polycast](https://www.youtube.com/watch?v=omASiF85JzI) is also available that
 
 > Where do I configure routes in my application?
 
-This can be done via [app/elements/routing.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/routing.html). We use Page.js for routing and new routes
+This can be done via [`app/elements/routing.html`](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/routing.html). We use Page.js for routing and new routes
 can be defined in this import. We then toggle which `<iron-pages>` page to display based on the [selected](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/index.html#L105) route.
 
 > Why are we using Page.js rather than a declarative router like `<more-routing>`?
@@ -202,7 +202,7 @@ App layouts live in a separate repository called [app-layout-templates](https://
 You can select a template and copy over the relevant parts you would like to reuse to Polymer Starter Kit. 
 
 You will probably need to change paths to where your Iron and Paper dependencies can be found to get everything working.
-This can be done by adding them to the [elements.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/elements.html) import.
+This can be done by adding them to the [`elements.html`](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/elements.html) import.
 
 > Something has failed during installation. How do I fix this?
 
