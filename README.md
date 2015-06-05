@@ -21,16 +21,15 @@ To take advantage of Polymer Starter Kit you need to:
 3. Modify the application to your liking.
 4. Deploy your production code.
 
-## Getting the code
+### Get the code
 
 [Download](https://github.com/polymerelements/polymer-starter-kit/releases/latest) and extract Polymer Starter Kit to where you want to work.
 
-*For absolute beginners, we also offer a very simple non-tooling version available from [Releases](https://github.com/polymerelements/polymer-starter-kit/releases/latest) page*
+The standard version of Polymer Starter Kit comes with tools that are very handy when developing a Polymer app. If you'd like to get started without installing any new tools, see Polymer Starter Kit Light in the [Releases](https://github.com/polymerelements/polymer-starter-kit/releases/latest) page.
 
 ### Install dependencies
 
-You will need Node.js installed for the tools we use. Bring up a terminal and type `node --version`. Node should respond with a 
-version at or above 0.12.x. If you require Node, go to [nodejs.org](https://nodejs.org) and click on the big green Install button.
+#### Quick-start (for experienced users)
 
 With Node installed, run the following one liner from the root of your Polymer Starter Kit download:
 
@@ -38,9 +37,46 @@ With Node installed, run the following one liner from the root of your Polymer S
 $ npm install -g gulp && npm install -g bower && npm install && bower install
 ```
 
-This will install the element sets (Paper, Iron, Platinum) and tools we will use to serve and build apps.
+#### Prerequisites (for everyone)
 
-### Serve / watch
+The full starter kit requires the following major dependencies:
+
+- Node.js, used to run JavaScript tools from the command line.
+- npm, the node package manager, installed with Node.js and used to install Node.js packages.
+- gulp, a Node.js-based build tool.
+- bower, a Node.js-based package manager used to install front-end packages (like Polymer).
+
+**To install dependencies:**
+
+1)  Check your Node.js version.
+
+```sh
+node --version
+```
+
+The version should be at or above 0.12.x. 
+
+2)  If you don't have Node.js installed, or you have a lower version, go to [nodejs.org](https://nodejs.org) and click on the big green Install button. 
+
+3)  Install `gulp` and `bower` globally.
+
+```sh
+npm install -g gulp bower
+```
+
+This lets you run `gulp` and `bower` from the command line.
+
+4)  Install the starter kit's local `npm` and `bower` dependencies.
+
+```sh
+cd polymer-starter-kit && npm install && bower install
+```
+
+This installs the element sets (Paper, Iron, Platinum) and tools the starter kit requires to build and serve apps.
+
+### Development workflow
+
+#### Serve / watch
 
 ```sh
 $ gulp serve
@@ -48,7 +84,7 @@ $ gulp serve
 
 This outputs an IP address you can use to locally test and another that can be used on devices connected to your network.
 
-### Run tests
+#### Run tests
 
 ```sh
 $ gulp test:local
@@ -56,7 +92,7 @@ $ gulp test:local
 
 This runs the unit tests defined in the `app/test` directory through [web-component-tester](https://github.com/Polymer/web-component-tester).
 
-### Build & Vulcanize
+#### Build & Vulcanize
 
 ```sh
 $ gulp
@@ -145,9 +181,6 @@ You will also want to navigate to `chrome://serviceworker-internals` and unregis
 Theming can be achieved using [CSS Custom properties](https://www.polymer-project.org/1.0/docs/devguide/styling.html#xscope-styling-details) via [app/elements/app-theme.html](https://github.com/PolymerElements/polymer-starter-kit/blob/master/app/elements/app-theme.html). 
 You can also use `app/styles/` for pure CSS stylesheets (e.g for global styles), however note that Custom properties will not work there under the shim.
 
-If you wish to split your CSS Custom property based stylesheets across multiple files, consider using [Custom CSS mixins](https://www.polymer-project.org/1.0/docs/devguide/styling.html#custom-css-mixins) and
-HTML imports.
-
 A [Polycast](https://www.youtube.com/watch?v=omASiF85JzI) is also available that walks through theming using Polymer 1.0.
 
 > Where do I configure routes in my application?
@@ -174,7 +207,7 @@ This can be done by adding them to the [elements.html](https://github.com/Polyme
 > Something has failed during installation. How do I fix this?
 
 Our most commonly reported issue is around system permissions for installing Node dependencies. 
-We recommend following the [fixing npm permissions](https://docs.npmjs.com/getting-started/fixing-npm-permissions)
+We recommend following the [fixing npm permissions](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
 guide to address any messages around administrator permissions being required. If you use `sudo`
 to work around these issues, this guide may also be useful for avoiding that.
 
@@ -194,22 +227,18 @@ Below, we've added in `script2.js` and `script3.js` to this block. The line
 during a build.
 
 ```html
-  <!-- build:js scripts/app.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/script2.js"></script>
-    <script src="scripts/script3.js"></script>
-  <!-- endbuild-->
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/script2.js"></script>
+<script src="scripts/script3.js"></script>
+<!-- endbuild-->
 ```
 
 > I'm finding the installation/tooling here overwhelming. What should I do?
 
-Don't worry! We've got your covered. Polymer Starter Kit tries to offer everything you need to build 
-and optimize your apps for production, which is why we include the tooling we do. We realise however
-that our tooling setup may not be for everyone.
+Don't worry! We've got your covered. Polymer Starter Kit tries to offer everything you need to build and optimize your apps for production, which is why we include the tooling we do. We realise however that our tooling setup may not be for everyone.
 
-If you find that you just want the simplest setup possible, we recommend using Polymer Starter Kit light, 
-which is available from the [Releases](https://github.com/PolymerElements/polymer-starter-kit/releases) page.
-This takes next to no time to setup.
+If you find that you just want the simplest setup possible, we recommend using Polymer Starter Kit light, which is available from the [Releases](https://github.com/PolymerElements/polymer-starter-kit/releases) page. This takes next to no time to setup.
 
 ## Contributing
 
