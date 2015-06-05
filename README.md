@@ -114,7 +114,7 @@ Web apps built with Polymer Starter Kit come configured with support for [Web Co
 
 ## Dependency Management
 
-Polymer uses [Bower](http://bower.io) for package management. This makes it easy to keep your elements up to date and versioned. For tooling, we use NPM to manage Node.js-based dependencies.
+Polymer uses [Bower](http://bower.io) for package management. This makes it easy to keep your elements up to date and versioned. For tooling, we use npm to manage Node.js-based dependencies.
 
 ## Service Worker
 
@@ -206,7 +206,7 @@ This can be done by adding them to the [`elements.html`](https://github.com/Poly
 
 > Something has failed during installation. How do I fix this?
 
-Our most commonly reported issue is around system permissions for installing Node dependencies. 
+Our most commonly reported issue is around system permissions for installing Node.js dependencies. 
 We recommend following the [fixing npm permissions](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md)
 guide to address any messages around administrator permissions being required. If you use `sudo`
 to work around these issues, this guide may also be useful for avoiding that.
