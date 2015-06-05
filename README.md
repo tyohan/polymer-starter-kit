@@ -212,7 +212,7 @@ guide to address any messages around administrator permissions being required. I
 to work around these issues, this guide may also be useful for avoiding that.
 
 If the issue is to do with a failure somewhere else, you might find that due to a network issue
-a dependency failed to correctly install. We recommend running `npm cache clean` followed by 
+a dependency failed to correctly install. We recommend running `npm cache clean` and deleting the `node_modules` directory followed by 
 `npm install` to see if this corrects the problem. If not, please check the [issue tracker](https://github.com/PolymerElements/polymer-starter-kit/issues) in case
 there is a workaround or fix already posted.
 
