@@ -34,7 +34,7 @@ The standard version of Polymer Starter Kit comes with tools that are very handy
 With Node installed, run the following one liner from the root of your Polymer Starter Kit download:
 
 ```sh
-$ npm install -g gulp && npm install -g bower && npm install && bower install
+$ npm install -g gulp bower && npm install && bower install
 ```
 
 #### Prerequisites (for everyone)
