@@ -31,7 +31,7 @@ The standard version of Polymer Starter Kit comes with tools that are very handy
 
 #### Quick-start (for experienced users)
 
-With Node installed, run the following one liner from the root of your Polymer Starter Kit download:
+With Node.js installed, run the following one liner from the root of your Polymer Starter Kit download:
 
 ```sh
 $ npm install -g gulp bower && npm install && bower install
@@ -114,7 +114,7 @@ Web apps built with Polymer Starter Kit come configured with support for [Web Co
 
 ## Dependency Management
 
-Polymer uses [Bower](http://bower.io) for package management. This makes it easy to keep your elements up to date and versioned. For tooling, we use NPM to manage Node-based dependencies.
+Polymer uses [Bower](http://bower.io) for package management. This makes it easy to keep your elements up to date and versioned. For tooling, we use NPM to manage Node.js-based dependencies.
 
 ## Service Worker
 
